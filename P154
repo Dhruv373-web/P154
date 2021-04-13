@@ -1,0 +1,50 @@
+AFRAME.registerComponent("fishes", {
+  init: function () {
+    for (var i = 1; i <= 20; i++) {
+      //id
+      var id = `hurdle${i}`;
+      AFRAME.registerComponent("coins", {
+  init: function () {
+    for (var i = 1; i <= 20; i++) {
+      //id
+      var id = `hurdle${i}`;
+      <script src="./components/Rotation.js"></script>
+    <script src="./components/Target.js"></script>
+    <script src="./components/Collider.js"></script>
+
+ var terrainEl = document.querySelector("#terrain");
+
+    //creating the bird model entity
+    var birdEl = document.createElement("a-entity");
+
+    //Setting multiple attributes
+    birdEl.setAttribute("id", id);
+    
+    birdEl.setAttribute("position",position);
+    birdEl.setAttribute("scale",{ x: 500,y: 500,z: 500 });
+
+    birdEl.setAttribute(
+      "gltf-model",
+      "./assets/models/flying_bird/scene.gltf"
+    );
+    
+    //animated models
+    birdEl.setAttribute("animation-mixer",{});
+    
+
+    //append the bird entity as the child of the terrain entity
+    terrainEl.appendChild(birdEl);
+    init: function () {
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") {
+        if (this.data.speedOfRoation < 0.1) {
+          this.data.speedOfRoation += 0.01;
+        }
+      }
+      if (e.key === "ArrowLeft") {
+        if (this.data.speedOfRoation > -0.1) {
+          this.data.speedOfRoation -= 0.01;
+        }
+      }
+    });
+  },
